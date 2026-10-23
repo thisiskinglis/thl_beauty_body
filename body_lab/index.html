@@ -1,44 +1,504 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Body Lab — The Human Lab</title>
+
+<title>The Body Lab — The Human Lab | Salt Rock</title>
+<meta name="description" content="Discover The Body Lab at The Human Lab, Salt Rock. Considered massage, unhurried touch and private moments of calm. By appointment only.">
+<meta name="theme-color" content="#F8F7F5">
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz@0,9..144,400;1,9..144,400&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#F8F7F5;--ink:#1A1816;--rust:#8C3A2E;--taupe:#B7ADA2;--line:rgba(26,24,22,0.1)}
-*{margin:0;padding:0;box-sizing:border-box} body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-0.02em}
-.mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--taupe)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 32px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(248,247,245,0.9);backdrop-filter:blur(12px);z-index:10}
-nav a{text-decoration:none;color:var(--ink);font-size:13px} 
-.wrap{max-width:1100px;margin:0 auto;padding:64px 32px}
-.hero-img{width:100%;height:52vh;object-fit:cover;border-radius:2px;margin:32px 0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px}
-.card{background:var(--bg);padding:32px} .card h3{font-size:22px;margin:8px 0} .price{float:right;font-family:'IBM Plex Mono';font-size:13px}
-.btn{display:inline-block;border:1px solid var(--ink);padding:14px 22px;text-decoration:none;color:var(--ink);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;margin-top:16px} .btn.fill{background:var(--ink);color:var(--bg)}
-.lab-nav{display:flex;gap:24px;flex-wrap:wrap;margin:24px 0} .lab-nav a{text-decoration:none;color:var(--rust);border-bottom:1px solid var(--rust);padding-bottom:2px;font-size:13px}
-footer{border-top:1px solid var(--line);padding:32px;text-align:center;font-size:12px;color:var(--taupe);margin-top:80px}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
+:root{
+  --bg:#F8F7F5;
+  --ink:#1A1816;
+  --rust:#8C3A2E;
+  --taupe:#B7ADA2;
+  --line:rgba(26,24,22,0.12);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.7;
+}
+
+h1,h2,h3{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  letter-spacing:-0.025em;
+  line-height:1.15;
+}
+
+a{
+  color:inherit;
+}
+
+.mono{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--taupe);
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:24px 32px;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  background:rgba(248,247,245,0.94);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  z-index:10;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--ink);
+  font-size:13px;
+}
+
+nav a:focus-visible,
+.btn:focus-visible,
+.back-link:focus-visible{
+  outline:2px solid var(--rust);
+  outline-offset:5px;
+}
+
+nav strong{
+  font-weight:500;
+  letter-spacing:0.07em;
+}
+
+.wrap{
+  max-width:1000px;
+  margin:0 auto;
+  padding:64px 32px 0;
+}
+
+.back-link{
+  display:inline-block;
+  text-decoration:none;
+}
+
+.back-link:hover{
+  color:var(--rust);
+}
+
+.hero{
+  padding:48px 0 56px;
+  border-bottom:1px solid var(--line);
+}
+
+h1{
+  font-size:clamp(44px,8vw,88px);
+  margin-top:24px;
+  max-width:850px;
+}
+
+.eyebrow{
+  margin-top:20px;
+  color:var(--rust);
+}
+
+.intro{
+  max-width:620px;
+  margin-top:32px;
+  font-size:clamp(17px,2vw,20px);
+  line-height:1.8;
+}
+
+.intro-secondary{
+  max-width:590px;
+  margin-top:16px;
+  font-size:15px;
+  line-height:1.9;
+  color:rgba(26,24,22,0.76);
+}
+
+.treatments{
+  padding:56px 0 0;
+}
+
+.section-label{
+  display:block;
+  margin-bottom:24px;
+  color:var(--rust);
+}
+
+.treatment-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+.treatment{
+  background:var(--bg);
+  padding:clamp(24px,4vw,40px);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  min-width:0;
+}
+
+.treatment-number{
+  color:var(--taupe);
+  margin-bottom:28px;
+}
+
+.treatment h2{
+  font-size:clamp(29px,4vw,42px);
+  margin-bottom:8px;
+}
+
+.treatment-subtitle{
+  color:var(--rust);
+  font-size:13px;
+  letter-spacing:0.04em;
+}
+
+.treatment-price{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px;
+  letter-spacing:0.04em;
+  margin-top:24px;
+  padding:9px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  width:100%;
+}
+
+.treatment-description{
+  font-size:15px;
+  line-height:1.9;
+  margin-top:20px;
+  color:rgba(26,24,22,0.82);
+}
+
+.treatment-note{
+  margin-top:20px;
+  font-size:12px;
+  line-height:1.8;
+  color:var(--taupe);
+}
+
+.booking{
+  margin-top:64px;
+  padding:clamp(28px,5vw,52px);
+  background:var(--ink);
+  color:var(--bg);
+}
+
+.booking .mono{
+  color:var(--taupe);
+}
+
+.booking h2{
+  font-size:clamp(32px,5vw,48px);
+  margin-top:18px;
+}
+
+.booking p{
+  max-width:560px;
+  margin-top:18px;
+  font-size:15px;
+  line-height:1.9;
+  color:rgba(248,247,245,0.78);
+}
+
+.btn{
+  display:inline-block;
+  border:1px solid var(--bg);
+  padding:14px 22px;
+  text-decoration:none;
+  color:var(--bg);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  margin-top:28px;
+  transition:background .2s ease,color .2s ease;
+}
+
+.btn:hover{
+  background:var(--bg);
+  color:var(--ink);
+}
+
+.care{
+  margin-top:56px;
+  max-width:700px;
+}
+
+.care h2{
+  font-size:clamp(28px,4vw,36px);
+  margin-top:16px;
+}
+
+.care p{
+  margin-top:18px;
+  font-size:14px;
+  line-height:1.95;
+  color:rgba(26,24,22,0.78);
+}
+
+.care strong{
+  font-weight:500;
+  color:var(--ink);
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:32px 20px;
+  text-align:center;
+  font-size:12px;
+  line-height:2;
+  color:var(--taupe);
+  margin-top:80px;
+}
+
+footer a{
+  text-decoration:none;
+}
+
+footer a:hover{
+  color:var(--rust);
+}
+
+@media(max-width:700px){
+  nav{
+    padding:20px;
+  }
+
+  .wrap{
+    padding:40px 20px 0;
+  }
+
+  .hero{
+    padding:36px 0 42px;
+  }
+
+  .treatment-grid{
+    grid-template-columns:1fr;
+  }
+
+  .treatment{
+    padding:28px 24px;
+  }
+
+  .treatment-number{
+    margin-bottom:20px;
+  }
+
+  .booking{
+    margin-top:44px;
+  }
+
+  footer{
+    margin-top:56px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .btn{
+    transition:none;
+  }
+}
 </style>
 </head>
+
 <body>
-<nav><a href="/"><strong>THE HUMAN LAB</strong> <span style="opacity:.5">— Salt Rock</span></a><a href="/#labs">The Labs</a></nav>
-<div class="wrap">
-<a href="/" class="mono" style="text-decoration:none">← Back to The Lab</a>
-<h1 style="font-size:clamp(40px,7vw,84px);margin-top:24px;line-height:0.95">The Body Lab</h1>
-<p class="mono" style="margin-top:16px;color:var(--rust)">Massage · Bodywork · Within scope</p>
-<div>
-<p style="max-width:60ch;line-height:1.7;margin:24px 0">Only offered within qualification, insurance and permitted scope. Not medical, not rehab. Slow, considered bodywork.</p>
-<div class="grid">
-<div class="card"><span class="price">R300 • 30m</span><h3>Back, Neck & Shoulder</h3></div>
-<div class="card"><span class="price">R500 • 60m</span><h3>Relaxation Massage</h3></div>
-<div class="card"><span class="price">R700 • 90m</span><h3>Extended Relaxation</h3></div>
-<div class="card"><span class="price">R280 • 30m</span><h3>Head, Neck & Shoulder</h3></div>
-</div>
-<p class="mono" style="margin-top:32px">Requires: intake, consent, contraindication screen, clean linens, draping protocol, ability to decline/adapt.</p>
-</div>
-<footer>THE HUMAN LAB • Salt Rock, Dolphin Coast • hello@humanlabofficial.com • @heldandboundco • Private studio — exact address on booking</footer>
-</div>
+
+<nav>
+  <a href="/" aria-label="The Human Lab homepage">
+    <strong>THE HUMAN LAB</strong>
+    <span style="opacity:.5"> — Salt Rock</span>
+  </a>
+  <a href="/#labs">The Labs</a>
+</nav>
+
+<main class="wrap">
+
+  <a href="/" class="mono back-link">← Back to The Human Lab</a>
+
+  <header class="hero">
+    <span class="mono">The Body Lab · 01 / 02</span>
+
+    <h1>The Body Lab</h1>
+
+    <p class="mono eyebrow">
+      Massage · Unhurried touch · A quieter kind of luxury
+    </p>
+
+    <p class="intro">
+      A private space to exhale.
+    </p>
+
+    <p class="intro-secondary">
+      At The Body Lab, each session is an invitation to slow down.
+      Warmth, considered touch and a steady rhythm create room to let
+      the day fall away. No rushing. No performance. Just time set
+      aside for yourself.
+    </p>
+
+    <p class="intro-secondary">
+      Two treatments. One intention: to leave the outside world
+      outside for a little while.
+    </p>
+  </header>
+
+  <section class="treatments" aria-labelledby="treatments-heading">
+    <span class="mono section-label" id="treatments-heading">
+      The treatments
+    </span>
+
+    <div class="treatment-grid">
+
+      <article class="treatment">
+        <span class="mono treatment-number">01 — Focused</span>
+
+        <h2>The Unwind</h2>
+
+        <p class="treatment-subtitle">
+          Back, Neck &amp; Shoulders
+        </p>
+
+        <p class="treatment-price">
+          R300 <span aria-hidden="true">·</span> 30 minutes
+        </p>
+
+        <p class="treatment-description">
+          A focused, unhurried treatment for the places that carry
+          the day. Thoughtful pressure and flowing massage movements
+          across the back, neck and shoulders, tailored to your
+          comfort and preference.
+        </p>
+
+        <p class="treatment-note">
+          A little space between you and everything demanding
+          your attention.
+        </p>
+      </article>
+
+      <article class="treatment">
+        <span class="mono treatment-number">02 — Signature</span>
+
+        <h2>The Slow Ritual</h2>
+
+        <p class="treatment-subtitle">
+          Full-Body Signature Massage
+        </p>
+
+        <p class="treatment-price">
+          R500 <span aria-hidden="true">·</span> 60 minutes
+        </p>
+
+        <p class="treatment-description">
+          A flowing full-body experience combining classic Swedish
+          massage techniques with slow, continuous movements and
+          an unhurried rhythm. Each session is adapted to your
+          comfort, preferred pressure and areas of focus.
+        </p>
+
+        <p class="treatment-note">
+          An hour without demands. A softer pace. Time to come
+          back to yourself.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="booking" aria-labelledby="booking-heading">
+    <span class="mono">Your time, set aside</span>
+
+    <h2 id="booking-heading">Make room to unwind.</h2>
+
+    <p>
+      Every session is private and by appointment. Get in touch
+      to discuss the treatment, ask a question or arrange a time
+      that suits you.
+    </p>
+
+    <!-- Replace the placeholder below with your actual WhatsApp
+         link, or change the href to your Fresha booking URL. -->
+    <a class="btn" href="https://wa.me/"
+       aria-label="Enquire about a Body Lab appointment">
+      Enquire about a session →
+    </a>
+  </section>
+
+  <section class="care" aria-labelledby="care-heading">
+    <span class="mono">Before your session</span>
+
+    <h2 id="care-heading">Your session. Your pace.</h2>
+
+    <p>
+      Every appointment begins with a brief consultation so we can
+      understand your preferences, discuss relevant contraindications
+      and agree on pressure and areas to include or avoid.
+      Your comfort, consent and privacy guide the experience
+      throughout.
+    </p>
+
+    <p>
+      You may request an adjustment, pause or end your session
+      at any time. Treatment areas, boundaries and draping are
+      discussed before the massage begins.
+    </p>
+
+    <p>
+      <strong>A note on practice:</strong> Massage is offered only
+      within the practitioner's qualifications, professional scope
+      and insurance. It is a relaxation and wellbeing service,
+      not medical treatment or rehabilitation.
+    </p>
+  </section>
+
+  <footer>
+    <strong>THE HUMAN LAB</strong><br>
+    Salt Rock · Dolphin Coast<br>
+    <a href="mailto:hello@humanlabofficial.com">
+      hello@humanlabofficial.com
+    </a>
+    ·
+    <a href="https://www.instagram.com/heldandboundco/"
+       target="_blank" rel="noopener noreferrer">
+      @heldandboundco
+    </a>
+    <br>
+    Private studio · Exact address provided on booking
+  </footer>
+
+</main>
+
 </body>
 </html>
+```
